@@ -3,7 +3,7 @@ package test.course;
 import java.util.ArrayList;
 import java.util.List;
 
-import test.course.cats.Cat;
+import org.cats.domain.Cat;
 
 public class CatDAO {
 	

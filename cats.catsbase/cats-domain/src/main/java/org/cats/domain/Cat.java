@@ -1,4 +1,4 @@
-package test.course.cats;
+package org.cats.domain;
 
 import java.util.Date;
 
