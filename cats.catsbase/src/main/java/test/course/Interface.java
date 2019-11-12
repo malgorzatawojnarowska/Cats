@@ -11,9 +11,68 @@ public class Interface {
 	
 	
     static Scanner inputScanner = new Scanner(System.in);
+    static CatDAO kotDao = new CatDAO();
 
     public static void main(String[] args) {
-        Cat kot = new Cat();
+        
+    		String menuVariable;
+    		do {
+    			showMenu();
+    			menuVariable = getUserInput();
+    			
+    			if(menuVariable.equals("1"))
+    				addCat();
+    			else if(menuVariable.equals("2"))
+    				showCats();
+    			
+    		}while (!menuVariable.equalsIgnoreCase("x"));
+    		
+    		
+    }
+    
+    public static void showMenu() {
+   		System.out.println();
+    		System.out.println("Witaj w programie, co chcesz zrobić?");
+    		System.out.println("1 - dodaj kota");
+    		System.out.println("2 - pokaż koty");
+    		System.out.println("x - zamknij program");
+    		System.out.println();
+    }
+    
+    public static void showCats() {
+    		
+    		System.out.println();
+    	
+    		for(int i=0;i<kotDao.getCats().size();i++)
+    			System.out.println(i+": "+kotDao.getCats().get(i).getName());
+    		
+    		System.out.println();
+    		
+    		Pattern catNumberPattern = Pattern.compile("[0-9]+");
+    		String catNumberInput;
+    		do {
+    			System.out.println("Wybierz numer kota: ");
+    			catNumberInput = getUserInput();
+    			
+    		}while(!catNumberPattern.matcher(catNumberInput).matches());
+    		
+    		System.out.println();
+    		Integer catNumber = Integer.parseInt(catNumberInput);
+    		if(catNumber <= kotDao.getCats().size())
+    			System.out.println(kotDao.getCats().get(catNumber).getInfo());
+    		else System.out.println("Nie ma kota o takim numerze, spróbuj ponownie!");
+    		
+    		System.out.println();
+    		
+    }
+    
+    public static void addCat() {
+    		kotDao.addCat(createCat());
+    		System.out.println();
+    }
+    
+    public static Cat createCat() {
+    		Cat kot = new Cat();
 
         System.out.print("Podaj imię kota: ");
         kot.setName(getUserInput());
@@ -47,8 +106,7 @@ public class Interface {
         System.out.print("Podaj, kto jest opiekunem kota: ");
         kot.setOwnerName(getUserInput());
         
-
-        System.out.println("Dziękuję, teraz już wiem wszystko o kocie!");
+        return kot;
     }
 
     /**

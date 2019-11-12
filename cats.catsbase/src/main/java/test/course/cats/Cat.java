@@ -43,8 +43,8 @@ public class Cat
 	}	
 	
 	
-	public String sayHello() {
-		return "Cześć, jestem "+name+", urodziłem się "+dateOfBirth+", ważę "+weight+", a opiekuje się mną " + ownerName;
+	public String getInfo() {
+		return "Kot ma na imię "+name+", urodził się "+dateOfBirth+", waży "+weight+", a opiekuje się nim " + ownerName;
 	}
     
 }
