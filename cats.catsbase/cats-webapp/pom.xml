@@ -5,21 +5,27 @@
     <artifactId>course</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>cats-application</artifactId>
+  <artifactId>cats-webapp</artifactId>
+  <packaging>war</packaging>
   <dependencies>
   	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-core</artifactId>
-  		<version>4.1.1.RELEASE</version>
-  	</dependency>
-  	<dependency>
   		<groupId>test</groupId>
-  		<artifactId>cats-domain</artifactId>
+  		<artifactId>cats-application</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
+  		<version>4.1.1.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>4.1.1.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-core</artifactId>
   		<version>4.1.1.RELEASE</version>
   	</dependency>
   </dependencies>

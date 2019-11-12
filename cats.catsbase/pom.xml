@@ -73,5 +73,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>cats-domain</module>
+    <module>cats-application</module>
   </modules>
 </project>
