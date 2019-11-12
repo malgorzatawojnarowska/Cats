@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import org.cats.domain.Cat;
+import test.course.cats.Cat;
 
 public class Interface {
 	
